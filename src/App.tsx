@@ -1,13 +1,17 @@
 import './App.css'
+import { Footer } from './app/common/Footer'
+import { Navbar } from './app/common/Navbar'
+import { Rutas } from './routes/Routes'
 
 function App() {
   return (
-    <>
-      <div>
-        <h1>Bienvenido a Black Gym Fitness Club</h1>
-        <h3>Sitio web en Construcción, regresa en otro momento</h3>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="flex-grow flex items-center justify-center">
+        <Rutas />
       </div>
-    </>
+      <Footer />
+    </div>
   )
 }
 
