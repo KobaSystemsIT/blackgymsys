@@ -5,7 +5,8 @@ function App() {
     <>
       <div>
         <h1>Bienvenido a Black Gym Fitness Club</h1>
-        <h3>Sitio web en Construcción, regresa en otro momento</h3>
+        <h3>Te amo Yocelin, cásate conmigo.</h3>
+        
       </div>
     </>
   )
