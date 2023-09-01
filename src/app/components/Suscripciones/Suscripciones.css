@@ -1,0 +1,110 @@
+
+td {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30.24px;
+  text-align: center;
+  vertical-align: middle;
+}
+svg{
+  width: 100%;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.criterio{
+  text-align: left;
+  width: 50%;
+}
+.entrena-ya, .plus{
+  color: #FF0000;
+}
+.arriba, .abajo{
+  font-family: Sora;
+  font-weight: 600;
+  text-align: center;
+}
+
+.arriba{
+  font-size: 30px;
+  line-height: 1.2;
+}
+.abajo{
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.fit{
+  color: #FFEC41;
+}
+.t-suscripciones{
+  border-collapse: collapse;
+  border-spacing: 10px; 
+}
+
+.t-suscripciones tr{
+  border-bottom: 1px solid #FFFFFF;
+}
+.t-suscripciones td{
+  padding: 10px;
+}
+.t-suscripciones th{
+  border-bottom: 2px solid #FFFFFF;
+  padding: 20px;
+}
+.container{
+  text-align: center;
+}
+
+.suscripciones{
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-family: Sora;
+    font-weight: 600;
+    font-size: 55px !important;
+    line-height: 69.3px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 470px){
+  .t-suscripciones {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 12px; 
+}
+
+.t-suscripciones th,
+.t-suscripciones td {
+    padding: 5px;
+}
+
+.criterio {
+    font-size: 20px;
+}
+    
+}
+
+@media screen and (max-width: 470px){
+    .arriba{
+      font-size: 18px;
+    }
+    .abajo {
+      font-size: 6px; 
+    }
+    .t-suscripciones {
+      border-spacing: 3px; 
+    }
+    .t-suscripciones th {
+      padding: 8px;
+    }
+    .criterio {
+      font-size: 10px;
+      width: 60%;
+      text-align: center;
+    }
+
+  }
+
+
