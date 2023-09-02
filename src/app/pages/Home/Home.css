@@ -1,3 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
 .home {
-  
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.estamos{
+  text-align: center;
+}
+.titles-places p {
+  text-align: center;
+}
+h1 {
+  font-family: Sora;
+  /* font-weight: 600; */
+  /* font-size: 55px; */
+  line-height: 69.3px;
+}
+.modal {
+  background-color: #000;
+}
+.comienza {
+  background-color: #ff0000;
+  border-radius: 30px;
+  width: 458px;
+  height: 70px;
+  top: 3024px;
+  left: 731px;
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30.24px;
+  margin: 0 auto;
+}
+
+.cuadrot {
+  border-collapse: collapse;
+  background-color: white;
+  color: black;
+  align-content: center;
+  font-family: Sora;
+}
+.primero {
+  background: linear-gradient(45deg, white 35%, transparent 0%) right,
+    linear-gradient(90deg, white 0%, transparent 0%) left;
+  background-size: 62% 100%, 30% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+.segundo {
+  background: linear-gradient(90deg, white 0%, transparent 0%) right,
+    linear-gradient(225deg, white 35%, transparent 0%) left;
+  background-size: 30% 100%, 61% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.inscrip-gratuita {
+  background-image: url(../../../assets/imagenFondo.jpeg);
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  padding-top: 10rem;
+  width: 100%;
+  clip-path: polygon(
+    100% 0%,
+    52% 14%,
+    53% 13%,
+    0% 0%,
+    0% 25%,
+    0% 48%,
+    0% 100%,
+    29% 85%,
+    30% 86%,
+    71% 98%,
+    76% 100%,
+    100% 86%,
+    100% 100%,
+    100% 73%
+  );
+}
+.redtitle {
+  color: #ff0000;
+}
+
+.image-stack .image {
+  border: 2px solid white;
+}
+.image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image2 {
+  z-index: 1;
+  grid-area: 1/4/9/15;
+}
+.image1 {
+  z-index: 10;
+  grid-area: -13/1/9/9;
+}
+.image3 {
+  z-index: 5;
+  grid-area: 10/17/6/10;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px;
+}
+
+.grid-container {
+  margin: auto;
+  max-width: 600px;
+  max-height: 600px;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+.pmodal {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.section2 {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txt {
+  color: black;
+}
+
+@media screen and (min-width: 1240px) {
+  .cuadrot {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 29px;
+  }
+}
+
+@media screen and (max-width: 1240px) and (min-width: 768) {
+  .cuadrot {
+    width: 100%;
+    margin-bottom: 100px !important;
+    padding: 100px !important;
+    font-size: 100px !important;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 470px) {
+  .cuadrot {
+    margin-bottom: 10px;
+    padding: 1px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .comienza {
+    width: 458px;
+    height: 70px;
+    top: 3024px;
+    left: 731px;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 30.24px;
+  }
+  .inscrip-gratuita {
+    height: 200px;
+    padding-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .section2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section2 > div {
+    width: 80%;
+  }
+  .titles-places {
+    padding-bottom: 100px;
+  }
+  .comienza {
+    width: 300px;
+    height: 70px;
+    top: 3024px;
+    left: 731px;
+    font-family: Sora;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30.24px;
+  }
+
+  .cuadrot {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .clu{
+    font-size: 50px;
+  }
+
+  .adq{
+    font-size: 20px;
+  }
 }
