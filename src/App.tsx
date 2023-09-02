@@ -5,7 +5,7 @@ import { Rutas } from './routes/Routes'
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen p-4">
+    <div className="flex flex-col min-h-screen ">
       <Navbar />
       <div className="flex-grow flex justify-center">
         <Rutas />

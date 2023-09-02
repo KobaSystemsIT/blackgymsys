@@ -1,4 +1,6 @@
-
+p{
+  text-align: center;
+}
 td {
   font-weight: 600;
   font-size: 24px;
@@ -60,10 +62,8 @@ svg{
   padding: 20px;
 }
 @media screen and (min-width: 768px) {
-  h1 {
+  p {
     font-family: Sora;
-    font-weight: 600;
-    font-size: 55px !important;
     line-height: 69.3px;
   }
 }
@@ -103,6 +103,9 @@ svg{
       font-size: 10px;
       width: 60%;
       text-align: center;
+    }
+    .elige{
+      font-size: 20px;
     }
 
   }

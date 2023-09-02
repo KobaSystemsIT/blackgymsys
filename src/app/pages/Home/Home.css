@@ -4,13 +4,19 @@
   padding-bottom: 50px;
   padding-top: 50px;
 }
+.estamos{
+  text-align: center;
+}
+.titles-places p {
+  text-align: center;
+}
 h1 {
   font-family: Sora;
-  font-weight: 600;
-  font-size: 55px;
+  /* font-weight: 600; */
+  /* font-size: 55px; */
   line-height: 69.3px;
 }
-.modal{
+.modal {
   background-color: #000;
 }
 .comienza {
@@ -24,6 +30,7 @@ h1 {
   font-weight: 600;
   font-size: 24px;
   line-height: 30.24px;
+  margin: 0 auto;
 }
 
 .cuadrot {
@@ -53,8 +60,10 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  align-items: center;
   text-align: center;
   padding-top: 10rem;
+  width: 100%;
   clip-path: polygon(
     100% 0%,
     52% 14%,
@@ -112,7 +121,7 @@ h1 {
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
 }
-.pmodal{
+.pmodal {
   background-color: #000 !important;
   color: #fff !important;
 }
@@ -129,6 +138,7 @@ img {
   padding: 0px;
 }
 .section2 {
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,10 +147,8 @@ img {
 .txt {
   color: black;
 }
-.estamos {
-  font-size: 40px;
-}
-@media screen and (min-width: 1240px){
+
+@media screen and (min-width: 1240px) {
   .cuadrot {
     margin-bottom: 20px;
     padding: 10px;
@@ -149,7 +157,7 @@ img {
   }
 }
 
-@media screen and (max-width: 1240px) and (min-width: 768){
+@media screen and (max-width: 1240px) and (min-width: 768) {
   .cuadrot {
     width: 100%;
     margin-bottom: 100px !important;
@@ -158,13 +166,12 @@ img {
   }
 }
 
-@media screen and (max-width: 768px) and (min-width: 470px){
+@media screen and (max-width: 768px) and (min-width: 470px) {
   .cuadrot {
     margin-bottom: 10px;
     padding: 1px;
     font-size: 16px;
   }
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -195,25 +202,27 @@ img {
   .titles-places {
     padding-bottom: 100px;
   }
-  .titles-places h1 {
-    font-size: 25px;
+  .comienza {
+    width: 300px;
+    height: 70px;
+    top: 3024px;
+    left: 731px;
+    font-family: Sora;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30.24px;
   }
-  .estamos{
-    font-size: 25px;
-  }
-.comienza {
-  width: 300px;
-  height: 70px;
-  top: 3024px;
-  left: 731px;
-  font-family: Sora;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 30.24px;
-}
 
-.cuadrot {
-  font-size: 8px;
-  margin-bottom: 2px;
-}
+  .cuadrot {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .clu{
+    font-size: 50px;
+  }
+
+  .adq{
+    font-size: 20px;
+  }
 }

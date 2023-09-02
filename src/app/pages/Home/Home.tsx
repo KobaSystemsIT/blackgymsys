@@ -21,11 +21,12 @@ const Home: React.FC<HomeProps>  = ({}) => {
 	return <div className='home'>
 	<div className='inscrip-gratuita'>
 		<div className='cuadrot primero'>INSCRIPCIÓN</div>
-		<div className='cuadrot segundo'>GRATUITA</div>
+		<div className='cuadrot segundo '>GRATUITA</div>
 	</div>
 	<div className='section2'>
 		<div className='places'>
-			<h2 className='estamos'>ESTAMOS DONDE TÚ ESTÁS...</h2>
+      <br/><br /><br /> 
+			<h2 className='estamos lg:text-5xl md:text-3xl sm:text-4xl'>ESTAMOS DONDE TÚ ESTÁS...</h2>
 			<div className='container image-stack'>
 				<div className='grid-container'>
 					<div className='image image1'>
@@ -41,16 +42,16 @@ const Home: React.FC<HomeProps>  = ({}) => {
 			</div>
 		</div>
 		<div className='titles-places'>
-			<h1>6 <a href="/clubes"><span className='redtitle'>Clubes</span></a></h1>
-			<h1><a href="/planes">Suscripciones</a></h1>
-			<p>Adquiere una suscripción <span className='redtitle'>Black Plus</span> y obtén acceso a todos los clubes</p>
+			<p className='clu lg:text-5xl md:text-4xl sm:text-4xl '>6 <a href="/clubes"><span className='redtitle'>Clubes</span></a></p>
+			<p className='clu lg:text-5xl md:text-4xl sm:text-4xl '><a href="/planes">Suscripciones</a></p>
+			<p className='adq lg:text-lg md:text-base sm:text-sm '>Adquiere una suscripción <span className='redtitle'>Black Plus</span> y obtén acceso a todos los clubes</p>
 		</div>
 		
 
 	</div>
 	
 	<Suscripciones/>
-	<button className='comienza' onClick={() => setShowModal(true)}>¡Comienza ya!</button>
+	<button className='comienza flex items-center justify-center' onClick={() => setShowModal(true)}>¡Comienza ya!</button>
 	{showModal ? (
         <>
           <div className=" mod justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
