@@ -1,21 +1,3 @@
-
-@media (max-width: 768px) {
-  .min-footer {
-    display: block; /* Mostrar el elemento */
-    visibility: visible;
-  }
-
-  .gran-footer {
-    display: none; /* Ocultar el elemento */
-    visibility: hidden;
-  }
-
-  .medium-footer {
-    display: none; /* Ocultar el elemento */
-    visibility: hidden;
-  }
-}
-
 @media (max-width: 768px) {
   .min-footer {
     display: block; /* Mostrar el elemento */
@@ -30,33 +12,12 @@
 
 @media (min-width: 780px) {
   .gran-footer {
-    display: none; /* Mostrar el elemento */
-    visibility: hidden;
-  }
-
-  .min-footer {
-    display: none; /* Ocultar el elemento */
-    visibility: hidden;
-  }
-
-  .medium-footer {
-    display: block; /* Mostrar el elemento */
-  }
-}
-
-@media (min-width: 1028px) {
-  .gran-footer {
     display: block; /* Mostrar el elemento */
     visibility: visible;
   }
 
   .min-footer {
     display: none; /* Ocultar el elemento */
-    visibility: hidden;
-  }
-
-  .medium-footer {
-    display: none; /* Mostrar el elemento */
     visibility: hidden;
   }
 }

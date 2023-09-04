@@ -1,24 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
-
-.home {
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-.estamos{
-  text-align: center;
-}
-.titles-places p {
-  text-align: center;
-}
-h1 {
-  font-family: Sora;
-  /* font-weight: 600; */
-  /* font-size: 55px; */
-  line-height: 69.3px;
-}
 .modal {
   background-color: #000;
 }
+
 .comienza {
   background-color: #ff0000;
   border-radius: 30px;
@@ -26,101 +9,86 @@ h1 {
   height: 70px;
   top: 3024px;
   left: 731px;
-  font-family: Sora;
   font-weight: 600;
   font-size: 24px;
   line-height: 30.24px;
   margin: 0 auto;
 }
 
-.cuadrot {
-  border-collapse: collapse;
-  background-color: white;
-  color: black;
-  align-content: center;
-  font-family: Sora;
-}
-.primero {
-  background: linear-gradient(45deg, white 35%, transparent 0%) right,
-    linear-gradient(90deg, white 0%, transparent 0%) left;
-  background-size: 62% 100%, 30% 100%;
-  background-repeat: no-repeat, no-repeat;
-}
-.segundo {
-  background: linear-gradient(90deg, white 0%, transparent 0%) right,
-    linear-gradient(225deg, white 35%, transparent 0%) left;
-  background-size: 30% 100%, 61% 100%;
-  background-repeat: no-repeat, no-repeat;
+/* Animaciones */
+.animated-bg-text {
+  position: relative;
+  background: white; /* Fondo blanco */
+  color: black; /* Color del texto, cambia "red" al color que desees */
+  font-size: 2rem; /* Tamaño de fuente predeterminado */
+  overflow: hidden;
+  animation: slideBg 2s ease forwards;
 }
 
-.inscrip-gratuita {
+/* Animación del fondo blanco */
+@keyframes slideBg {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.container-inscript {
   background-image: url(../../../assets/imagenFondo.jpeg);
-  height: 70vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  clip-path: polygon(0% 0%, 51% 16%, 100% 0%, 100% 89%, 72% 99%, 22% 85%, 0% 99%); 
+  display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-top: 10rem;
-  width: 100%;
-  clip-path: polygon(
-    100% 0%,
-    52% 14%,
-    53% 13%,
-    0% 0%,
-    0% 25%,
-    0% 48%,
-    0% 100%,
-    29% 85%,
-    30% 86%,
-    71% 98%,
-    76% 100%,
-    100% 86%,
-    100% 100%,
-    100% 73%
-  );
 }
+
 .redtitle {
   color: #ff0000;
 }
 
-.image-stack .image {
-  border: 2px solid white;
-}
+/* Estilos comunes para todas las imágenes */
 .image {
   border-radius: 20px;
   overflow: hidden;
+  border: 2px solid white;
+  transition: transform 0.3s ease-in-out; /* Agregar una transición para la propiedad "transform" */
 }
-.image2 {
+
+/* Estilos específicos para cada imagen */
+.left-image {
+  z-index: 10;
+  grid-area: 5/1/9/9;
+}
+
+.center-image {
   z-index: 1;
   grid-area: 1/4/9/15;
 }
-.image1 {
-  z-index: 10;
-  grid-area: -13/1/9/9;
-}
-.image3 {
+
+.right-image {
   z-index: 5;
   grid-area: 10/17/6/10;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px 20px;
-}
 
 .grid-container {
-  margin: auto;
-  max-width: 600px;
-  max-height: 600px;
   aspect-ratio: 1/1;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-rows: repeat(10, 1fr);
 }
+
+.image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
 .pmodal {
   background-color: #000 !important;
   color: #fff !important;
@@ -159,7 +127,6 @@ img {
 
 @media screen and (max-width: 1240px) and (min-width: 768) {
   .cuadrot {
-    width: 100%;
     margin-bottom: 100px !important;
     padding: 100px !important;
     font-size: 100px !important;
