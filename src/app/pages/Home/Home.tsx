@@ -16,10 +16,10 @@ const Home: React.FC<HomeProps> = ({ }) => {
     <div>
       <div className='justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript'>
         <div className='flex flex-col gap-2'>
-          <div className='lg:text-6xl md:text-xl text-sm text-center animated-bg-text p-2 rounded'>
+          <div className='lg:text-5xl md:text-xl text-sm text-center animated-bg-text p-2 rounded'>
             <h1>INSCRIPCIÓN</h1>
           </div>
-          <div className='lg:text-6xl md:text-xl text-sm text-center animated-bg-text p-2 rounded'>
+          <div className='lg:text-5xl md:text-xl text-sm text-center animated-bg-text p-2 rounded'>
             <h1>GRATUITA</h1>
           </div>
         </div>
@@ -27,9 +27,9 @@ const Home: React.FC<HomeProps> = ({ }) => {
       <div className="container mx-auto p-4 mt-14">
         <div>
           <div className="mb-4 text-center">
-            <p className="lg:text-4xl md:text-2xl text-xl">ESTAMOS DONDE TÚ ESTÁS</p>
+            <p className="lg:text-4xl md:text-2xl text-xl text-start">ESTAMOS DONDE TÚ ESTÁS...</p>
           </div>
-          <div className='grid  grid-cols-2 lg:gap-8 justify-center align-middle items-center'>
+          <div className='grid  grid-cols-2 lg:gap-8 justify-center align-middle items-center pt-5'>
             <div className="grid aspect-auto grid-container p-4">
               <div className='image left-image'>
                 <img src={imagen1} />
