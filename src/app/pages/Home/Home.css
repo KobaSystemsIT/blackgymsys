@@ -31,7 +31,8 @@
     width: 0;
   }
   100% {
-    width: 115%;
+    padding: 3px;
+    width: 110%;
   }
 }
 
@@ -153,4 +154,11 @@
   }
 }
 
+.title-up {
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+}
+
+.title-bottom {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%);
+}
 
