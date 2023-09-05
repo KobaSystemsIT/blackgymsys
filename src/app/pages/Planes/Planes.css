@@ -1,3 +1,28 @@
-.planes {
-  
+.planes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+  
+.plan-card {
+    flex: 0 0 calc(33.333% - 186px);
+    border: 4px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.2em;
+    overflow: auto;
+}
+
+
+.animated-bg-text {
+    position: relative;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    overflow: hidden;
+    animation: slideBg 2s ease forwards;
+}
+  
