@@ -6,7 +6,7 @@ export type Props = {};
 
 const Suscripciones: React.FC<Props> = ({ }) => {
   return (
-    <div className='suscripciones'>
+    <div className='flex flex-col justify-center align-middle items-center'>
       <div className='p-4'>
         <p className='lg:text-4xl md:text-2xl text- text-center'>Elige el mejor plan y <span className='text-red-600'>¡entrena ya!</span></p>
       </div>
