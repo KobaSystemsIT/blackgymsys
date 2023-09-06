@@ -1,5 +1,4 @@
-const url = "http://localhost:3001/api/getPlanes"; //Temporal
-
+const url = "https://accessdb.blackgymfitclub.com/api/getPlanes";
 export const getPlanes = () => {
     const requestOptions = {
         method: 'GET',
