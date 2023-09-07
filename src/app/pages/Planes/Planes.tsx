@@ -60,13 +60,13 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 			<div className="mb-4 text-center mt-10">
 				<p className="lg:text-4xl md:text-2xl text-xl font-semibold">¡INSCRIPCIÓN GRATUITA!</p>
 			</div>
-			<div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1">
+			<div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 p-10 gap-6">
 				{planes.map((plan) => {
 					const words = plan.namePlanes.split(" ");
 					const firstWord = words.shift();
 
 					return (
-						<div key={plan.idPlanes} className="plan-card lg:text-2xl md:text-xl text-lg">
+						<div key={plan.idPlanes} className="plan-card lg:text-2xl md:text-xl text-base">
 							<h2>
 								<span>{firstWord} </span>
 								{words.map((word, index) => (
