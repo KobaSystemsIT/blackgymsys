@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ }) => {
           <div className='lg:text-6xl md:text-4xl text-2xl text-start animated-bg-text title-up font-bold'>
             <h1>INSCRIPCIÓN</h1>
           </div>
-          <div className='lg:text-6xl md:text-4xl text-2xl text-end animated-bg-text title-bottom font-bold' >
+          <div className='lg:text-6xl md:text-4xl text-2xl text-center animated-bg-text title-bottom font-bold' >
             <h1>GRATUITA</h1>
           </div>
         </div>
@@ -54,9 +54,9 @@ const Home: React.FC<HomeProps> = ({ }) => {
               </div>
             </div>
             <div className='flex flex-col justify-center text-center gap-12'>
-              <p className='clu lg:text-5xl md:text-4xl text-4xl lg:text-end'>6 <a href="/clubes"><span className='hover:text-red-600'>Clubes</span></a></p>
-              <p className='clu lg:text-5xl md:text-4xl text-4xl lg:text-end'><a href="/planes" className='hover:text-red-600'>Suscripciones y beneficios</a></p>
-              <p className='adq lg:text-lg md:text-base text-sm lg:text-start'>Adquiere una suscripción <span className='text-red-600'>Black Plus</span> y obtén acceso a todos los clubes</p>
+              <p className='clu lg:text-5xl md:text-4xl text-4xl'>6 <a href="/clubes"><span className='hover:text-red-600'>Clubes</span></a></p>
+              <p className='clu lg:text-5xl md:text-4xl text-4xl '><a href="/planes" className='hover:text-red-600'>Suscripciones y beneficios</a></p>
+              <p className='adq lg:text-lg md:text-base text-sm'>Adquiere una suscripción <span className='text-red-600'>Black Plus</span> y obtén acceso a todos los clubes</p>
             </div>
           </div>
         </div>
