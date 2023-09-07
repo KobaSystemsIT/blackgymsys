@@ -61,7 +61,9 @@ const Home: React.FC<HomeProps> = ({ }) => {
           </div>
         </div>
       </div>
-      <Suscripciones />
+      <div className='pt-10'>
+        <Suscripciones />
+      </div>
     </div>
   </>
 };

@@ -16,11 +16,11 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 	const wordColors: Record<string, string> = {
 		"Week": "orange",
 		"2Week": "orange",
-		"Fit": "yellow",
+		"Fit": "#E8D045",
 		"Year": "red",
 		"Plus": "red",
 		"Medium": "red",
-	  };
+	};
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -49,10 +49,10 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 		<>
 			<div className={`justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
 				<div className='justify-start flex flex-col gap-2 ml-0'>
-					<div className='lg:text-8xl md:text-4xl text-2xl text-center font-bold animated-bg-text'>
+					<div className='lg:text-8xl md:text-5xl text-3xl text-center font-bold animated-bg-text'>
 						<h1>PLA</h1>
 					</div>
-					<div className='lg:text-8xl md:text-4xl text-2xl text-center font-bold animated-bg-text'>
+					<div className='lg:text-8xl md:text-5xl text-3xl text-center font-bold animated-bg-text'>
 						<h1>NES</h1>
 					</div>
 				</div>
@@ -60,28 +60,28 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 			<div className="mb-4 text-center mt-10">
 				<p className="lg:text-4xl md:text-2xl text-xl font-semibold">¡INSCRIPCIÓN GRATUITA!</p>
 			</div>
-			<div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 p-10 gap-6">
+			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 p-10 gap-6 m-10">
 				{planes.map((plan) => {
 					const words = plan.namePlanes.split(" ");
 					const firstWord = words.shift();
 
 					return (
 						<div key={plan.idPlanes} className="plan-card lg:text-2xl md:text-xl text-base">
-							<h2>
-								<span>{firstWord} </span>
+							<h2 className='bg-white'>
+								<span className='text-black'>{firstWord} </span>
 								{words.map((word, index) => (
 									<span key={index} style={{ color: wordColors[word] || 'defaultColor' }}>
 										{word + (index < words.length - 1 ? ' ' : '')}
 									</span>
 								))}
 							</h2>
-							<p>{plan.descriptionPlanes} x ${plan.pricePlanes}</p>
+							<p className='p-2'>{plan.descriptionPlanes} x ${plan.pricePlanes}.00</p>
 						</div>
 					);
 				})}
 			</div>
 			<div>
-				<Suscripciones />				
+				<Suscripciones />
 			</div>
 		</>
 	);
