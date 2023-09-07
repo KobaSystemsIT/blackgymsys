@@ -9,7 +9,6 @@ export type HomeProps = {
 }
 
 const Home: React.FC<HomeProps> = ({ }) => {
-  const [showModal, setShowModal] = useState(false);
 
   const [backgroundImage, setBackgroundImage] = useState(1);
   const totalImages = 2; // Número total de imágenes disponibles
@@ -29,10 +28,10 @@ const Home: React.FC<HomeProps> = ({ }) => {
     <div>
       <div className={`justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
         <div className='flex flex-col gap-2'>
-          <div className='lg:text-5xl md:text-xl text-sm text-start animated-bg-text title-up'>
+          <div className='lg:text-6xl md:text-4xl text-2xl text-start animated-bg-text title-up font-bold'>
             <h1>INSCRIPCIÓN</h1>
           </div>
-          <div className='lg:text-5xl md:text-xl text-sm text-end animated-bg-text title-bottom'>
+          <div className='lg:text-6xl md:text-4xl text-2xl text-end animated-bg-text title-bottom font-bold' >
             <h1>GRATUITA</h1>
           </div>
         </div>

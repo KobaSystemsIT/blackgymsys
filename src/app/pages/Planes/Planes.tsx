@@ -49,10 +49,10 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 		<>
 			<div className={`justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
 				<div className='justify-start flex flex-col gap-2 ml-0'>
-					<div className='lg:text-8xl md:text-xl text-sm text-center font-bold animated-bg-text'>
+					<div className='lg:text-8xl md:text-4xl text-2xl text-center font-bold animated-bg-text'>
 						<h1>PLA</h1>
 					</div>
-					<div className='lg:text-8xl md:text-xl text-sm text-center font-bold animated-bg-text'>
+					<div className='lg:text-8xl md:text-4xl text-2xl text-center font-bold animated-bg-text'>
 						<h1>NES</h1>
 					</div>
 				</div>
