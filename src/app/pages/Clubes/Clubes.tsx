@@ -87,7 +87,7 @@ const ClubesDropdown = () => {
     <>
       <div
         onMouseMove={handleMouseMove}
-        className="justify-center lg:h-[40rem] md:h-[25rem] h-[15rem] items-center container-inscript"
+        className="justify-center lg:h-[37rem] md:h-[25rem] h-[15rem] items-center container-inscript"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
       </div>
@@ -134,7 +134,7 @@ const ClubesDropdown = () => {
               })()}
             </div>
           )}
-          {mapUrl && (
+          {mapUrl && !showIframe && (
             <div className="flex justify-center align-middle lg:pt-0 md:pt-10 pt-10 pr-5">
               <iframe className='lg:h-96 lg:w-full h-72 w-80'
                 src={mapUrl}
