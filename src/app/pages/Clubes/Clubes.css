@@ -1,48 +1,41 @@
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+  } */
 
-  .dropdown-container,
-  .map-container {
-    text-align: center;
-  }
+.dropdown-container,
+.map-container {
+  text-align: center;
+}
 
 .dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    background-color: #f9f9f9;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
 }
 
 .dropdown-list li {
-    color: black;
-    padding: 8px 16px;
-    display: block;
+  color: black;
+  padding: 8px 16px;
+  display: block;
 }
 
 .dropdown-list li:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .arrow {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-
-.card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
 
 @keyframes fadeIn {
-to {
+  to {
     opacity: 1;
-}
+  }
 }
