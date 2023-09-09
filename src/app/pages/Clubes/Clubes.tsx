@@ -2,51 +2,52 @@ import React, { useEffect, useState } from 'react';
 import { getClubes } from '@/services/Clubes/clubes.service';
 import { Clubes } from '@/models/clubes';
 import backgroundImage from '@/assets/mapTuxPng.png'
+import './Clubes.css'
 
 const ClubesDropdown = () => {
   const [clubes, setClubes] = useState<Clubes[]>([]);
   const [selectedClub, setSelectedClub] = useState<string>("");
   const [mapUrl, setMapUrl] = useState<string | null>(null);
 
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [showIframe, setShowIframe] = useState(false);
+  // const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  // const [showIframe, setShowIframe] = useState(false);
 
-  const [iframeOpacity, setIframeOpacity] = useState(0);
+  // const [iframeOpacity, setIframeOpacity] = useState(0);
 
-  const tolerance = 50;
+  // const tolerance = 50;
 
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const x = e.clientX + window.scrollX;
-    const y = e.clientY + window.scrollY;
+  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   const x = e.clientX + window.scrollX;
+  //   const y = e.clientY + window.scrollY;
 
-    const coordinateToClubMap: { [key: string]: number } = {
-      '350,520': 4,
-      '750,440': 2,
-      '870,420': 1,
-      '840,600': 5,
-      '1086,494': 3,
-    };
+  //   const coordinateToClubMap: { [key: string]: number } = {
+  //     '350,520': 4,
+  //     '750,440': 2,
+  //     '870,420': 1,
+  //     '840,600': 5,
+  //     '1086,494': 3,
+  //   };
 
-    const clubKey = Object.keys(coordinateToClubMap).find(key => {
-      const [clubX, clubY] = key.split(',').map(Number);
-      return Math.abs(clubX - x) <= tolerance && Math.abs(clubY - y) <= tolerance;
-    });
+  //   const clubKey = Object.keys(coordinateToClubMap).find(key => {
+  //     const [clubX, clubY] = key.split(',').map(Number);
+  //     return Math.abs(clubX - x) <= tolerance && Math.abs(clubY - y) <= tolerance;
+  //   });
 
-    if (clubKey) {
-      const clubId = coordinateToClubMap[clubKey];
-      const club = clubes.find(c => c.idClub === clubId);
-      if (club) {
-        setShowIframe(true);
-        setIframeOpacity(1);
-        setMapUrl(club.dataIFrame);
-        setCursorPosition({ x, y });
-      }
-    } else {
-      setShowIframe(false);
-      setIframeOpacity(0);
-    }
-  };
+  //   if (clubKey) {
+  //     const clubId = coordinateToClubMap[clubKey];
+  //     const club = clubes.find(c => c.idClub === clubId);
+  //     if (club) {
+  //       setShowIframe(true);
+  //       setIframeOpacity(1);
+  //       setMapUrl(club.dataIFrame);
+  //       setCursorPosition({ x, y });
+  //     }
+  //   } else {
+  //     setShowIframe(false);
+  //     setIframeOpacity(0);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchClubes = async () => {
@@ -86,14 +87,23 @@ const ClubesDropdown = () => {
   return (
     <>
       <div
-        onMouseMove={handleMouseMove}
-        className="justify-center lg:h-[37rem] md:h-[25rem] h-[15rem] items-center container-inscript"
+        // onMouseMove={handleMouseMove}
+        className="justify-end lg:h-[37rem] md:h-[25rem] h-[15rem] items-center container-inscript"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
+        <div className='flex flex-col gap-2 mr-10'>
+					<div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-up-c'>
+						<h1>CLU</h1>
+					</div>
+					<div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-bottom-c'>
+						<h1>BES</h1>
+					</div>
+				</div>
       </div>
-      <div className="flex flex-col items-center justify-center pt-10">
+      <div className="flex flex-col items-center justify-center lg:pt-10 lg:pb-10">
         {/* {'Dropdown de clubes'} */}
-        <div className="dropdown-container mb-4">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  gap-6 justify-center">
+          <h1 className='lg:text-4xl md:text-xl text-lg font-semibold'>ESTAMOS DONDE TÚ ESTÁS...</h1>
           <select onChange={handleClubChange} value={selectedClub}>
             <option value="" disabled>
               Selecciona un club
@@ -134,7 +144,7 @@ const ClubesDropdown = () => {
               })()}
             </div>
           )}
-          {mapUrl && !showIframe && (
+          {mapUrl && (
             <div className="flex justify-center align-middle lg:pt-0 md:pt-10 pt-10 pr-5">
               <iframe className='lg:h-96 lg:w-full h-72 w-80'
                 src={mapUrl}
@@ -145,7 +155,7 @@ const ClubesDropdown = () => {
             </div>
           )}
         </div>
-        {showIframe && mapUrl && (
+        {/* {showIframe && mapUrl && (
           <div style={{
             position: 'absolute',
             top: cursorPosition.y,
@@ -166,7 +176,7 @@ const ClubesDropdown = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

@@ -1,41 +1,27 @@
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  } */
-
-.dropdown-container,
-.map-container {
-  text-align: center;
+.animated-bg-text-club {
+  position: relative;
+  background: rgb(0, 0, 0); /* Fondo blanco */
+  color: rgb(255, 255, 255); /* Color del texto, cambia "red" al color que desees */
+  font-size: 2rem;    /* Tamaño de fuente predeterminado */
+  overflow: hidden;
+  animation: slideBg 2s ease forwards;
 }
 
-.dropdown-list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9f9;
-}
-
-.dropdown-list li {
-  color: black;
-  padding: 8px 16px;
-  display: block;
-}
-
-.dropdown-list li:hover {
-  background-color: #f1f1f1;
-}
-
-.arrow {
-  margin-left: 10px;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+/* Animación del fondo blanco */
+@keyframes slideBg {
+  0% {
+    width: 0;
   }
+  100% {
+    padding: 3px;
+    width: 110%;
+  }
+}
+
+.title-up-c {
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+}
+
+.title-bottom-c {
+  clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
