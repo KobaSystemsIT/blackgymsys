@@ -33,9 +33,3 @@
 .arrow {
   margin-left: 10px;
 }
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
