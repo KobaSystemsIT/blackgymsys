@@ -9,45 +9,64 @@ const ClubesDropdown = () => {
   const [selectedClub, setSelectedClub] = useState<string>("");
   const [mapUrl, setMapUrl] = useState<string | null>(null);
 
-  // const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  // const [showIframe, setShowIframe] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [showIframe, setShowIframe] = useState(false);
 
-  // const [iframeOpacity, setIframeOpacity] = useState(0);
+  const [iframeOpacity, setIframeOpacity] = useState(0);
 
-  // const tolerance = 50;
+  const tolerance = 0.05;
+  
+  const coordinateToClubMap: { [key: string]: number } = {
+    '0.2,0.65': 4,
+    '0.4,0.47': 2,
+    '0.46,0.43': 1,
+    '0.58,0.57': 3,
+    '0.44,0.75': 5,
+  };
+
+  const relativeCoordinateToClubMap = Object.fromEntries(
+    Object.entries(coordinateToClubMap).map(([key, value]) => {
+      const [x, y] = key.split(',').map(Number);
+      return [`${x},${y}`, value];
+    })
+  );
 
 
-  // const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-  //   const x = e.clientX + window.scrollX;
-  //   const y = e.clientY + window.scrollY;
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const container = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - container.left;
+    const y = e.clientY - container.top;
 
-  //   const coordinateToClubMap: { [key: string]: number } = {
-  //     '350,520': 4,
-  //     '750,440': 2,
-  //     '870,420': 1,
-  //     '840,600': 5,
-  //     '1086,494': 3,
-  //   };
+    const relativeX = x / container.width;
+    const relativeY = y / container.height;
 
-  //   const clubKey = Object.keys(coordinateToClubMap).find(key => {
-  //     const [clubX, clubY] = key.split(',').map(Number);
-  //     return Math.abs(clubX - x) <= tolerance && Math.abs(clubY - y) <= tolerance;
-  //   });
+    console.log("x: " + relativeX + " y: " + relativeY)
 
-  //   if (clubKey) {
-  //     const clubId = coordinateToClubMap[clubKey];
-  //     const club = clubes.find(c => c.idClub === clubId);
-  //     if (club) {
-  //       setShowIframe(true);
-  //       setIframeOpacity(1);
-  //       setMapUrl(club.dataIFrame);
-  //       setCursorPosition({ x, y });
-  //     }
-  //   } else {
-  //     setShowIframe(false);
-  //     setIframeOpacity(0);
-  //   }
-  // };
+    
+
+    const clubKey = Object.keys(relativeCoordinateToClubMap).find(key => {
+      const [clubRelativeX, clubRelativeY] = key.split(',').map(Number);
+      console.log(clubRelativeX, clubRelativeY);
+      return Math.abs(clubRelativeX - relativeX) <= tolerance &&
+        Math.abs(clubRelativeY - relativeY) <= tolerance;
+    });
+
+    
+    if (clubKey) {
+      console.log(clubKey);
+      const clubId = coordinateToClubMap[clubKey];
+      const club = clubes.find(c => c.idClub === clubId);
+      if (club) {
+        setShowIframe(true);
+        setIframeOpacity(1);
+        setMapUrl(club.dataIFrame);
+        setCursorPosition({ x, y });
+      }
+    } else {
+      setShowIframe(false);
+      setIframeOpacity(0);
+    }
+  };
 
   useEffect(() => {
     const fetchClubes = async () => {
@@ -165,10 +184,8 @@ const ClubesDropdown = () => {
           }}>
             <div className='card rounded-xl bg-white'>
               <div>
-                <iframe className=' rounded-lg'
+                <iframe className='lg:h-46 lg:w-46 rounded-lg'
                   src={mapUrl}
-                  width="400"
-                  height="250"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
