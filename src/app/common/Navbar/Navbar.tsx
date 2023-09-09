@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 	return <div>
 		<div className="mx-auto lg:px-8 p-4 lg:text-sm md:text-xs text-xs">
 			<div className="flex items-end justify-between text-center ">
-				<div className="lg:flex lg:w-[13%] md:flex md:w-[15%] w-[30%]">
+				<div className="lg:flex lg:w-[10%] md:flex md:w-[15%] w-[30%]">
 					<a href="/"><img src={logo} /></a>
 				</div>
 				<div className="hidden sm:block">
