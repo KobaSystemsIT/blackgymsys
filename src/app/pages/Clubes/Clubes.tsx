@@ -11,17 +11,18 @@ const ClubesDropdown = () => {
 
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [showIframe, setShowIframe] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   const [iframeOpacity, setIframeOpacity] = useState(0);
 
   const tolerance = 0.05;
-  
+
   const coordinateToClubMap: { [key: string]: number } = {
-    '0.2,0.65': 4,
+    '0.2,0.56': 4,
     '0.4,0.47': 2,
     '0.46,0.43': 1,
     '0.58,0.57': 3,
-    '0.44,0.75': 5,
+    '0.44,0.63': 5,
   };
 
   const relativeCoordinateToClubMap = Object.fromEntries(
@@ -31,7 +32,6 @@ const ClubesDropdown = () => {
     })
   );
 
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const container = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - container.left;
@@ -40,9 +40,7 @@ const ClubesDropdown = () => {
     const relativeX = x / container.width;
     const relativeY = y / container.height;
 
-    console.log("x: " + relativeX + " y: " + relativeY)
-
-    
+    //console.log("x: " + relativeX + " y: " + relativeY);
 
     const clubKey = Object.keys(relativeCoordinateToClubMap).find(key => {
       const [clubRelativeX, clubRelativeY] = key.split(',').map(Number);
@@ -51,7 +49,6 @@ const ClubesDropdown = () => {
         Math.abs(clubRelativeY - relativeY) <= tolerance;
     });
 
-    
     if (clubKey) {
       console.log(clubKey);
       const clubId = coordinateToClubMap[clubKey];
@@ -99,31 +96,47 @@ const ClubesDropdown = () => {
     const selectedClubData = clubes.find((c => c.idClub === Number(selectedValue)));
     if (selectedClubData) {
       setMapUrl(selectedClubData.dataIFrame);
+      setShowMap(true);
     }
   };
 
 
   return (
     <>
-      <div
-        // onMouseMove={handleMouseMove}
-        className="justify-end lg:h-[37rem] md:h-[25rem] h-[15rem] items-center container-inscript"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <div onMouseMove={handleMouseMove} className="justify-end lg:h-[40rem] md:h-[25rem] h-[15rem] items-center container-inscript-map" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className='flex flex-col gap-2 mr-10'>
-					<div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-up-c'>
-						<h1>CLU</h1>
-					</div>
-					<div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-bottom-c'>
-						<h1>BES</h1>
-					</div>
-				</div>
+          <div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-up-c'>
+            <h1>CLU</h1>
+          </div>
+          <div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-bottom-c'>
+            <h1>BES</h1>
+          </div>
+        </div>
+        {showIframe && mapUrl && (
+          <div style={{
+            position: 'absolute',
+            top: cursorPosition.y,
+            left: cursorPosition.x,
+            opacity: iframeOpacity,
+            transition: 'opacity 3s ease-in-out'
+          }}>
+            <div className='card rounded-xl bg-white top-10 right-20'>
+              <div>
+                <iframe className='rounded-lg lg:h-36 lg:w-60 md:h-36 h-28 w-40'
+                  src={mapUrl}
+                  allowFullScreen={true}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      <div className="flex flex-col items-center justify-center lg:pt-10 lg:pb-10">
+      <div className="flex flex-col items-center justify-center pt-10 pb-10 mx-4" style={{ transition: 'opacity 3s ease-in-out'}}>
         {/* {'Dropdown de clubes'} */}
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  gap-6 justify-center">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-6 justify-center">
           <h1 className='lg:text-4xl md:text-xl text-lg font-semibold'>ESTAMOS DONDE TÚ ESTÁS...</h1>
-          <select onChange={handleClubChange} value={selectedClub}>
+          <select onChange={handleClubChange} value={selectedClub} className='rounded-xl pl-4'>
             <option value="" disabled>
               Selecciona un club
             </option>
@@ -135,9 +148,9 @@ const ClubesDropdown = () => {
           </select>
         </div>
         {/* {'Contenido de los clubes'} */}
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-center align-middle items-center pt-10 gap-6">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 justify-center align-middle items-center pt-10 gap-8">
           {selectedClub && (
-            <div className="club-info">
+            <div>
               {(() => {
                 const clubSeleccionado = clubes.find(club => club.idClub === Number(selectedClub));
                 if (clubSeleccionado) {
@@ -163,9 +176,9 @@ const ClubesDropdown = () => {
               })()}
             </div>
           )}
-          {mapUrl && (
-            <div className="flex justify-center align-middle lg:pt-0 md:pt-10 pt-10 pr-5">
-              <iframe className='lg:h-96 lg:w-full h-72 w-80'
+          {mapUrl && showMap && (
+            <div className="flex justify-center align-middle lg:pt-0">
+              <iframe className='lg:h-96 lg:w-full md:h-80 md:w-full h-72 w-80'
                 src={mapUrl}
                 style={{ border: 0 }}
                 allowFullScreen={true}
@@ -173,27 +186,12 @@ const ClubesDropdown = () => {
               ></iframe>
             </div>
           )}
-        </div>
-        {/* {showIframe && mapUrl && (
-          <div style={{
-            position: 'absolute',
-            top: cursorPosition.y,
-            left: cursorPosition.x,
-            opacity: iframeOpacity,
-            transition: 'opacity 0.3s ease-in-out'
-          }}>
-            <div className='card rounded-xl bg-white'>
-              <div>
-                <iframe className='lg:h-46 lg:w-46 rounded-lg'
-                  src={mapUrl}
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                ></iframe>
-              </div>
+          {!mapUrl && showMap && (
+            <div className='flex lg:h-96 lg:w-full md:h-80 md:w-full h-72 w-80 bg-white justify-center items-center p-4'>
+              <h1 className='text-black'>Esta sucursal aún no cuenta con una ubicación en Google Maps.</h1>
             </div>
-          </div>
-        )} */}
+          )}
+        </div>
       </div>
     </>
   );

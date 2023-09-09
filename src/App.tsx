@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="flex flex-col">
       <Navbar />
-      <div className="flex-grow pt-14 min-h-screen">
+      <div className="flex-grow pt-14 h-full">
         <Rutas />
       </div>
       <Footer />

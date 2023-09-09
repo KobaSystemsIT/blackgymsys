@@ -47,7 +47,7 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 
 	return (
 		<>
-			<div className={`justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
+			<div className={`justify-center lg:h-[40rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
 				<div className='justify-start flex flex-col gap-2 ml-0'>
 					<div className='lg:text-8xl md:text-5xl text-3xl text-center font-bold animated-bg-text'>
 						<h1>PLA</h1>
@@ -59,6 +59,9 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 			</div>
 			<div className="mb-4 text-center mt-10">
 				<p className="lg:text-4xl md:text-2xl text-xl font-semibold">¡INSCRIPCIÓN GRATUITA!</p>
+			</div>
+			<div className="mb-4 text-center mt-10 p-2">
+				<p className="lg:text-2xl md:text-xl text-lg font-semibold">Sin costo de inscripción, <p className='text-red-600'>¡elije el plan perfecto para tu cuerpo ideal!</p></p>
 			</div>
 			<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 p-10 gap-6 m-10">
 				{planes.map((plan) => {
@@ -82,6 +85,9 @@ const ViewPlanes: React.FC<PlanesProps> = () => {
 			</div>
 			<div>
 				<Suscripciones />
+			</div>
+			<div className='flex justify-center align-middle p-4'>
+				<a href='https://wa.me/529616603718' className='btn bg-red-600 lg:btn-lg text-white rounded-full'>¡Empieza hoy mismo!</a>
 			</div>
 		</>
 	);

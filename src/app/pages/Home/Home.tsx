@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ }) => {
 
   return <>
     <div>
-      <div className={`justify-center lg:h-[35rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
+      <div className={`justify-center lg:h-[40rem] md:h-[25rem] h-[15rem] items-center container-inscript bg-image-${backgroundImage} transition-all duration-1000`}>
         <div className='flex flex-col gap-2'>
           <div className='lg:text-6xl md:text-4xl text-2xl text-start animated-bg-text title-up font-bold'>
             <h1>INSCRIPCIÓN</h1>
@@ -39,7 +39,7 @@ const Home: React.FC<HomeProps> = ({ }) => {
       <div className="mx-4 p-6 mt-14">
         <div>
           <div className="mb-4 text-center">
-            <p className="lg:text-4xl md:text-2xl text-xl lg:text-start font-semibold">ESTAMOS DONDE TÚ ESTÁS...</p>
+            <p className="lg:text-6xl md:text-2xl text-xl lg:text-center font-semibold">#SOMOSBLACK</p>
           </div>
           <div className='grid lg:grid-cols-2 lg:gap-8 justify-center align-middle items-center pt-5'>
             <div className="grid aspect-auto grid-container p-4">
@@ -54,16 +54,20 @@ const Home: React.FC<HomeProps> = ({ }) => {
               </div>
             </div>
             <div className='flex flex-col justify-center text-center gap-12'>
-              <p className='clu lg:text-5xl md:text-4xl text-4xl'>6 <a href="/clubes"><span className='hover:text-red-600'>Clubes</span></a></p>
-              <p className='clu lg:text-5xl md:text-4xl text-4xl '><a href="/planes" className='hover:text-red-600'>Suscripciones y beneficios</a></p>
+              <p className='clu lg:text-5xl md:text-4xl text-4xl font-semibold'>6 <a href="/clubes"><span className='lg:text-white text-red-600 hover:text-red-600 font-semibold'>Clubes</span></a></p>
+              <p className='clu lg:text-5xl md:text-4xl text-4xl font-semibold'><a href="/planes" className='lg:text-white hover:text-red-600'>Suscripciones y beneficios</a></p>
               <p className='adq lg:text-lg md:text-base text-sm'>Adquiere una suscripción <span className='text-red-600'>Black Plus</span> y obtén acceso a todos los clubes</p>
             </div>
           </div>
         </div>
+        <div className='pt-10'>
+          <Suscripciones />
+        </div>
+        <div className='flex justify-center align-middle p-4'>
+          <a href='https://wa.me/529616603718' className='btn bg-red-600 lg:btn-lg text-white rounded-full'>¡Comienza ya!</a>
+        </div>
       </div>
-      <div className='pt-10'>
-        <Suscripciones />
-      </div>
+
     </div>
   </>
 };

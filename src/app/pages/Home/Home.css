@@ -32,7 +32,7 @@
   }
   100% {
     padding: 3px;
-    width: 110%;
+    width: 115%;
   }
 }
 
@@ -40,7 +40,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  clip-path: polygon(0% 0%, 51% 16%, 100% 0%, 100% 89%, 72% 99%, 22% 85%, 0% 99%); 
+  clip-path: polygon(0% 0%, 51% 10%, 100% 0%, 100% 89%, 72% 100%, 22% 85%, 0% 99%); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,65 +93,6 @@
 .image:hover {
   transform: scale(1.1);
   cursor: pointer;
-}
-
-.pmodal {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-@media screen and (min-width: 1240px) {
-  .cuadrot {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-weight: 600;
-    font-size: 29px;
-  }
-}
-
-@media screen and (max-width: 1240px) and (min-width: 768) {
-  .cuadrot {
-    margin-bottom: 100px !important;
-    padding: 100px !important;
-    font-size: 100px !important;
-  }
-}
-
-@media screen and (max-width: 768px) and (min-width: 470px) {
-  .cuadrot {
-    margin-bottom: 10px;
-    padding: 1px;
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .comienza {
-    width: 458px;
-    height: 70px;
-    top: 3024px;
-    left: 731px;
-    font-weight: 100;
-    font-size: 24px;
-    line-height: 30.24px;
-  }
-  .inscrip-gratuita {
-    height: 200px;
-    padding-top: 5rem;
-  }
-}
-
-@media screen and (max-width: 470px) {
-  .comienza {
-    width: 300px;
-    height: 70px;
-    top: 3024px;
-    left: 731px;
-    font-family: Sora;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30.24px;
-  }
 }
 
 .title-up {

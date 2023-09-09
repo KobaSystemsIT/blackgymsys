@@ -25,3 +25,13 @@
 .title-bottom-c {
   clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
+
+.container-inscript-map {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(0% 0%, 51% 16%, 100% 0%, 100% 89%, 72% 99%, 22% 85%, 0% 99%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
