@@ -11,7 +11,7 @@ export type HomeProps = {
 const Home: React.FC<HomeProps> = ({ }) => {
 
   const [backgroundImage, setBackgroundImage] = useState(1);
-  const totalImages = 2; // Número total de imágenes disponibles
+  const totalImages = 3; // Número total de imágenes disponibles
 
   useEffect(() => {
     // Función para cambiar la imagen de fondo cada 5 segundos y reiniciar en bucle

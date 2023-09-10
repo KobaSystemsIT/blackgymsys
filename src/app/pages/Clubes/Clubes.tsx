@@ -18,11 +18,11 @@ const ClubesDropdown = () => {
   const tolerance = 0.05;
 
   const coordinateToClubMap: { [key: string]: number } = {
-    '0.2,0.56': 4,
+    '0.2,0.59': 4,
     '0.4,0.47': 2,
     '0.46,0.43': 1,
     '0.58,0.57': 3,
-    '0.44,0.63': 5,
+    '0.44,0.69': 5,
   };
 
   const relativeCoordinateToClubMap = Object.fromEntries(
@@ -40,7 +40,7 @@ const ClubesDropdown = () => {
     const relativeX = x / container.width;
     const relativeY = y / container.height;
 
-    //console.log("x: " + relativeX + " y: " + relativeY);
+    console.log("x: " + relativeX + " y: " + relativeY);
 
     const clubKey = Object.keys(relativeCoordinateToClubMap).find(key => {
       const [clubRelativeX, clubRelativeY] = key.split(',').map(Number);
@@ -103,7 +103,7 @@ const ClubesDropdown = () => {
 
   return (
     <>
-      <div onMouseMove={handleMouseMove} className="justify-end lg:h-[40rem] md:h-[25rem] h-[15rem] items-center container-inscript-map" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div onMouseMove={handleMouseMove} className="justify-end lg:h-[44rem] md:h-[25rem] h-[15rem] items-center container-inscript-map" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className='flex flex-col gap-2 mr-10'>
           <div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-up-c'>
             <h1>CLU</h1>
@@ -111,7 +111,7 @@ const ClubesDropdown = () => {
           <div className='lg:text-8xl md:text-5xl text-3xl text-start font-bold animated-bg-text-club title-bottom-c'>
             <h1>BES</h1>
           </div>
-        </div>
+        </div>        
         {showIframe && mapUrl && (
           <div style={{
             position: 'absolute',
@@ -120,7 +120,7 @@ const ClubesDropdown = () => {
             opacity: iframeOpacity,
             transition: 'opacity 3s ease-in-out'
           }}>
-            <div className='card rounded-xl bg-white top-10 right-20'>
+            <div className='card rounded-xl bg-white top-14 right-20'>
               <div>
                 <iframe className='rounded-lg lg:h-36 lg:w-60 md:h-36 h-28 w-40'
                   src={mapUrl}
